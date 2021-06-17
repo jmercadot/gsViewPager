@@ -1,0 +1,8 @@
+R_DEF: Internal format may change without notice
+local
+id load_image_view
+id slider_image_view
+layout slide_image_item
+layout slide_image_item_disable_zoom
+raw load
+string app_name
