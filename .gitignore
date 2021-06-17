@@ -18434,7 +18434,6 @@
 /.idea/modules.xml
 /.idea/vcs.xml
 /gradle/wrapper/gradle-wrapper.jar
-/gradle/wrapper/gradle-wrapper.properties
 /gradlew
 /gradlew.bat
 /gscustomprogressview/build/.transforms/28bf228f5205791ab1a4c5791c712a06/classes/classes.dex
