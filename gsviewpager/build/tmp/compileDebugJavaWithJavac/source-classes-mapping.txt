@@ -1,0 +1,22 @@
+com/gs/gsviewpager/GSViewPager.java
+ com.gs.gsviewpager.GSViewPager
+com/gs/gsviewpager/TouchImageView.java
+ com.gs.gsviewpager.TouchImageView
+ com.gs.gsviewpager.TouchImageView$1
+ com.gs.gsviewpager.TouchImageView$ScaleListener
+com/gs/gsviewpager/BuildConfig.java
+ com.gs.gsviewpager.BuildConfig
+com/gs/gsviewpager/adapters/GSViewPagerAdapterBitMapImage.java
+ com.gs.gsviewpager.adapters.GSViewPagerAdapterBitMapImage
+ com.gs.gsviewpager.adapters.GSViewPagerAdapterBitMapImage$1
+com/gs/gsviewpager/Transformer.java
+ com.gs.gsviewpager.Transformer
+com/gs/gsviewpager/adapters/GSViewPagerAdapterImage.java
+ com.gs.gsviewpager.adapters.GSViewPagerAdapterImage
+ com.gs.gsviewpager.adapters.GSViewPagerAdapterImage$1
+com/gs/gsviewpager/adapters/GSViewPagerAdapterFragment.java
+ com.gs.gsviewpager.adapters.GSViewPagerAdapterFragment
+com/gs/gsviewpager/adapters/GSViewPagerAdapterFromURL.java
+ com.gs.gsviewpager.adapters.GSViewPagerAdapterFromURL
+ com.gs.gsviewpager.adapters.GSViewPagerAdapterFromURL$1
+ com.gs.gsviewpager.adapters.GSViewPagerAdapterFromURL$2

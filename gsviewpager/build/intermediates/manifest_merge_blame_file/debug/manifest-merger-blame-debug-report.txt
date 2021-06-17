@@ -4,8 +4,8 @@
 4
 5    <uses-sdk
 6        android:minSdkVersion="21"
-6-->/Users/Android/Documents/components/gsviewpager/src/main/AndroidManifest.xml
-7        android:targetSdkVersion="30" />
-7-->/Users/Android/Documents/components/gsviewpager/src/main/AndroidManifest.xml
+6-->/Users/Android/Documents/librerias/gsViewPager/gsviewpager/src/main/AndroidManifest.xml
+7        android:targetSdkVersion="28" />
+7-->/Users/Android/Documents/librerias/gsViewPager/gsviewpager/src/main/AndroidManifest.xml
 8
 9</manifest>

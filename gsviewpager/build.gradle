@@ -1,8 +1,8 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven'
 
 android {
     compileSdkVersion 28
-
 
     defaultConfig {
         minSdkVersion 21
@@ -26,7 +26,15 @@ android {
         targetCompatibility = 1.8
     }
 
-
+    task installArchives(type: Upload) {
+        description "Installs the artifacts to the local Maven repository."
+        repositories.mavenInstaller {
+            configuration = configurations.default
+            pom.groupId = 'jmercadot'
+            pom.artifactId = 'gsViewPager'
+            pom.version = '1.0.0'
+        }
+    }
 }
 
 dependencies {
