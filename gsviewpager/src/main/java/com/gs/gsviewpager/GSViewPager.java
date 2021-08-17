@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -41,13 +42,37 @@ public class GSViewPager extends ViewPager {
     private int oldPosition = 0;
     private int offSet = 0;
 
+
+    private boolean enabled;
+
     public GSViewPager(@NonNull Context context) {
         super(context);
+        this.enabled = true;
     }
 
     public GSViewPager(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        this.enabled = true;
     }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if (this.enabled) {
+            return super.onTouchEvent(event);
+        }
+
+        return false;
+    }
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent event) {
+        if (this.enabled) {
+            return super.onInterceptTouchEvent(event);
+        }
+
+        return false;
+    }
+
 
     public void loadListDrawable(ArrayList<Drawable> listDrawableImage, Boolean parallax) {
         this.listDrawableImage = listDrawableImage;
@@ -184,5 +209,9 @@ public class GSViewPager extends ViewPager {
         if (parallax) {
             setPageTransformer(false, new Transformer());
         }
+    }
+
+    public void setPagingEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 }
