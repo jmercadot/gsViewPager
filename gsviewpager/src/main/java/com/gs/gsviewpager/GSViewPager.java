@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.gs.gsviewpager.adapters.GSViewPagerAdapterBitMapImage;
 import com.gs.gsviewpager.adapters.GSViewPagerAdapterFragment;
