@@ -12,32 +12,40 @@ public class GSViewPagerAdapterFragment extends FragmentPagerAdapter {
 
     public  static final int BEHAVIOR = BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT;
 
-    private final ArrayList<Fragment> listFragment;
-    private final ArrayList<String> listTitle;
+    private ArrayList<Fragment> listFragment = new ArrayList<>();
+    private ArrayList<String> listTitle =  new ArrayList<>();
 
     public GSViewPagerAdapterFragment(@NonNull FragmentManager fm, ArrayList<Fragment> listFragment, ArrayList<String> listTitle) {
         super(fm);
-        this.listFragment = listFragment;
-        this.listTitle = listTitle;
+        if (this.listFragment.isEmpty()){
+            this.listFragment = listFragment;
+            this.listTitle = listTitle;
+        }
     }
 
     public GSViewPagerAdapterFragment(@NonNull FragmentManager fm, ArrayList<Fragment> listFragment) {
         super(fm);
-        this.listFragment = listFragment;
-        this.listTitle = new ArrayList<>();
+        if (this.listFragment.isEmpty()){
+            this.listFragment = listFragment;
+            this.listTitle = listTitle;
+        }
     }
 
     public GSViewPagerAdapterFragment(@NonNull FragmentManager fm, ArrayList<Fragment> listFragment, ArrayList<String> listTitle, int behavior) {
         super(fm, behavior);
-        this.listFragment = listFragment;
-        this.listTitle = listTitle;
+        if (this.listFragment.isEmpty()){
+            this.listFragment = listFragment;
+            this.listTitle = listTitle;
+        }
 
     }
 
     public GSViewPagerAdapterFragment(@NonNull FragmentManager fm, ArrayList<Fragment> listFragment, int behavior) {
         super(fm, behavior);
-        this.listFragment = listFragment;
-        this.listTitle = new ArrayList<>();
+        if (this.listFragment.isEmpty()){
+            this.listFragment = listFragment;
+            this.listTitle = listTitle;
+        }
     }
 
     @NonNull
