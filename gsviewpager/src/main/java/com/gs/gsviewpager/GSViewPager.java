@@ -171,15 +171,17 @@ public class GSViewPager extends ViewPager {
 
     private void loadFragments() {
         if (this.fragmentTitleList == null) {
-            adapterFragment = new GSViewPagerAdapterFragment(fm, listFragment);
+            adapterFragment = new GSViewPagerAdapterFragment(fm,GSViewPagerAdapterFragment.BEHAVIOR);
             setAdapter(adapterFragment);
+            adapterFragment.setFragments(listFragment);
         } else {
-            adapterFragment = new GSViewPagerAdapterFragment(fm, listFragment, fragmentTitleList);
+            adapterFragment = new GSViewPagerAdapterFragment(fm,GSViewPagerAdapterFragment.BEHAVIOR);
             setAdapter(adapterFragment);
+            adapterFragment.setFragments(listFragment,fragmentTitleList);
         }
 
         if (parallax) {
-            setPageTransformer(false, new Transformer());
+            setPageTransformer(true, new Transformer());
         }
     }
 
