@@ -15,6 +15,8 @@ public class GSViewPagerAdapterFragment extends FragmentPagerAdapter {
     private ArrayList<Fragment> listFragment;
     private ArrayList<String> listTitle;
 
+
+
     public void setFragments(ArrayList<Fragment> listFragment,ArrayList<String> listTitle){
         this.listFragment = listFragment;
         this.listTitle = listTitle;
@@ -29,6 +31,8 @@ public class GSViewPagerAdapterFragment extends FragmentPagerAdapter {
 
     public GSViewPagerAdapterFragment(FragmentManager fm, int behavior) {
         super(fm, behavior);
+        this.listFragment = new ArrayList<>();
+        this.listTitle = new ArrayList<>();
     }
 
     @NonNull
