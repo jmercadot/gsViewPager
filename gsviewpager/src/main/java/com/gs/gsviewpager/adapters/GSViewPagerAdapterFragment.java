@@ -12,40 +12,27 @@ public class GSViewPagerAdapterFragment extends FragmentPagerAdapter {
 
     public  static final int BEHAVIOR = BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT;
 
-    private ArrayList<Fragment> listFragment = new ArrayList<>();
-    private ArrayList<String> listTitle =  new ArrayList<>();
+    private ArrayList<Fragment> listFragment;
+    private ArrayList<String> listTitle;
 
-    public GSViewPagerAdapterFragment(@NonNull FragmentManager fm, ArrayList<Fragment> listFragment, ArrayList<String> listTitle) {
-        super(fm);
-        if (this.listFragment.isEmpty()){
-            this.listFragment = listFragment;
-            this.listTitle = listTitle;
-        }
+
+
+    public void setFragments(ArrayList<Fragment> listFragment,ArrayList<String> listTitle){
+        this.listFragment = listFragment;
+        this.listTitle = listTitle;
+        notifyDataSetChanged();
     }
 
-    public GSViewPagerAdapterFragment(@NonNull FragmentManager fm, ArrayList<Fragment> listFragment) {
-        super(fm);
-        if (this.listFragment.isEmpty()){
-            this.listFragment = listFragment;
-            this.listTitle = listTitle;
-        }
+    public void setFragments(ArrayList<Fragment> listFragment){
+        this.listFragment = listFragment;
+        this.listTitle = new ArrayList<>();
+        notifyDataSetChanged();
     }
 
-    public GSViewPagerAdapterFragment(@NonNull FragmentManager fm, ArrayList<Fragment> listFragment, ArrayList<String> listTitle, int behavior) {
+    public GSViewPagerAdapterFragment(FragmentManager fm, int behavior) {
         super(fm, behavior);
-        if (this.listFragment.isEmpty()){
-            this.listFragment = listFragment;
-            this.listTitle = listTitle;
-        }
-
-    }
-
-    public GSViewPagerAdapterFragment(@NonNull FragmentManager fm, ArrayList<Fragment> listFragment, int behavior) {
-        super(fm, behavior);
-        if (this.listFragment.isEmpty()){
-            this.listFragment = listFragment;
-            this.listTitle = listTitle;
-        }
+        this.listFragment = new ArrayList<>();
+        this.listTitle = new ArrayList<>();
     }
 
     @NonNull
