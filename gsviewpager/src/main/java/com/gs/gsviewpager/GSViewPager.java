@@ -39,11 +39,15 @@ public class GSViewPager extends ViewPager {
     private FragmentManager fm;
     private Boolean parallax;
 
-    private int oldPosition = 0;
-    private int offSet = 0;
-
-
     private boolean enabled;
+
+    private OnMoveListener listener;
+    private float x1 = 0;
+    private float x2 = 0;
+
+    public interface OnMoveListener{
+        public void onMoveNext();
+    }
 
     public GSViewPager(@NonNull Context context) {
         super(context);
@@ -58,6 +62,21 @@ public class GSViewPager extends ViewPager {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (this.enabled) {
+
+            // TODO Auto-generated method stub
+            switch (event.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    x1 = event.getX();
+                    break;
+                case MotionEvent.ACTION_UP:
+                    x2 = event.getX();
+                    float deltaX = x2 - x1;
+                    if (deltaX < 0) {
+                       listener.onMoveNext();
+                    }
+                    break;
+            }
+
             return super.onTouchEvent(event);
         }
 
@@ -223,5 +242,9 @@ public class GSViewPager extends ViewPager {
             page.setAlpha(1 - Math.abs(position));
         });
 
+    }
+
+    public void setOnMoveListener(OnMoveListener listener){
+        this.listener = listener;
     }
 }
