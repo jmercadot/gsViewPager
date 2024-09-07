@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.annotation.SuppressLint;
 import android.database.DatabaseUtils;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.continuidadoperativa.myapplication.databinding.ActivityMainBinding;
 import com.gs.gsviewpager.GSViewPager;
@@ -28,5 +29,8 @@ public class MainActivity extends AppCompatActivity {
         fragments.add(new Fragment2());
         binding.ExampleViewPager.loadFragmentList(fragments,getSupportFragmentManager(), false);
         binding.ExampleViewPager.disablePagingEffect();
+        binding.ExampleViewPager.setOnMoveListener(() -> {
+            Toast.makeText(this, "Se movio!", Toast.LENGTH_SHORT).show();
+        });
     }
 }
