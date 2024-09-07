@@ -45,19 +45,16 @@ android {
     namespace 'com.gs.gsviewpager'
 }
 
-publishing {
-    publications {
-        maven(MavenPublication) {
-            groupId = 'jmercadot'
-            artifactId = 'gsViewPager'
-            version = "1.0.0"
-            pom {
-                description = 'First release'
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                groupId = 'jmercadot'
+                artifactId = 'gsViewPager'
+                version = '1.0.1'
+                artifact(bundleReleaseAar)
             }
         }
-    }
-    repositories {
-        mavenLocal()
     }
 }
 
