@@ -1,3 +1,2 @@
 rootProject.name = "My Application"
-include ':app'
-include ':gsviewpager'
+include ':app', ':gsviewpager'
