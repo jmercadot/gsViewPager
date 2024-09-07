@@ -63,18 +63,12 @@ public class GSViewPager extends ViewPager {
     public boolean onTouchEvent(MotionEvent event) {
         if (this.enabled) {
 
-            // TODO Auto-generated method stub
-            switch (event.getAction()) {
-                case MotionEvent.ACTION_MOVE:
-                    x1 = event.getX();
-                    break;
-                case MotionEvent.ACTION_UP:
-                    x2 = event.getX();
-                    float deltaX = x2 - x1;
-                    if (deltaX < 0) {
-                       listener.onMoveNext();
-                    }
-                    break;
+            if (event.getAction() == MotionEvent.ACTION_UP) {
+                x2 = event.getX();
+                float deltaX = x2 - x1;
+                if (deltaX < 0) {
+                    listener.onMoveNext();
+                }
             }
 
             return super.onTouchEvent(event);
@@ -86,6 +80,9 @@ public class GSViewPager extends ViewPager {
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
         if (this.enabled) {
+            if (event.getAction() == MotionEvent.ACTION_DOWN){
+                x1 = event.getX();
+            }
             return super.onInterceptTouchEvent(event);
         }
 
