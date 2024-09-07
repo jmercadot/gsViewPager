@@ -171,13 +171,13 @@ public class GSViewPager extends ViewPager {
 
     private void loadFragments() {
         if (this.fragmentTitleList == null) {
-            adapterFragment = new GSViewPagerAdapterFragment(fm,GSViewPagerAdapterFragment.BEHAVIOR);
+            adapterFragment = new GSViewPagerAdapterFragment(fm, GSViewPagerAdapterFragment.BEHAVIOR);
             setAdapter(adapterFragment);
             adapterFragment.setFragments(listFragment);
         } else {
-            adapterFragment = new GSViewPagerAdapterFragment(fm,GSViewPagerAdapterFragment.BEHAVIOR);
+            adapterFragment = new GSViewPagerAdapterFragment(fm, GSViewPagerAdapterFragment.BEHAVIOR);
             setAdapter(adapterFragment);
-            adapterFragment.setFragments(listFragment,fragmentTitleList);
+            adapterFragment.setFragments(listFragment, fragmentTitleList);
         }
 
         if (parallax) {
@@ -215,5 +215,13 @@ public class GSViewPager extends ViewPager {
 
     public void setPagingEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public void disablePagingEffect() {
+        this.setPageTransformer(true, (page, position) -> {
+            page.setTranslationX(-position * page.getWidth());
+            page.setAlpha(1 - Math.abs(position));
+        });
+
     }
 }
