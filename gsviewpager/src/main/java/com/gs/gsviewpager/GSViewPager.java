@@ -65,7 +65,7 @@ public class GSViewPager extends ViewPager {
 
             // TODO Auto-generated method stub
             switch (event.getAction()) {
-                case MotionEvent.ACTION_DOWN:
+                case MotionEvent.ACTION_MOVE:
                     x1 = event.getX();
                     break;
                 case MotionEvent.ACTION_UP:
